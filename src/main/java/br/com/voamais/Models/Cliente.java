@@ -11,6 +11,7 @@ public class Cliente {
     private final String id = UUID.randomUUID().toString();
 
 
+
     public Cliente(String nome, String cpf, boolean vip, int qtdPessoasMaiorIdade, int getQtdPessoasMenorIdade) {
         this.nome = nome;
         this.cpf = cpf;
