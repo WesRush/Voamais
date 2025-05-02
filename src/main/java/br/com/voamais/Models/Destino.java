@@ -3,16 +3,12 @@ package br.com.voamais.Models;
 public class Destino {
     private String nome;
     private String pais;
-    private String estado;
-    private String cidade;
     private String descricao;
     private double taxaTurismo;
 
-    public Destino(String nome, String pais, String estado, String cidade, String descricao, double taxaTurismo) {
+    public Destino(String nome, String pais, String descricao, boolean possuiTranslado, boolean possuiHospedagem, boolean possuiAluguelCarro, double taxaTurismo) {
         this.nome = nome;
         this.pais = pais;
-        this.estado = estado;
-        this.cidade = cidade;
         this.descricao = descricao;
         this.taxaTurismo = taxaTurismo;
     }
@@ -28,7 +24,6 @@ public class Destino {
     public String getPais() {
         return pais;
     }
-
 
     public void setPais(String pais) {
         this.pais = pais;
@@ -50,9 +45,8 @@ public class Destino {
     public void setTaxaTurismo(double taxaTurismo) {
         this.taxaTurismo = taxaTurismo;
     }
-
     public String exibirResumoDestino() {
-        return "Destino: " + nome + ", " + pais + ", "+ estado +", "+ cidade +" | " + descricao +
+        return "Destino: " + nome + ", " + pais + " | " + descricao +
                 " | Taxa turismo: R$" + taxaTurismo;
     }
 }
