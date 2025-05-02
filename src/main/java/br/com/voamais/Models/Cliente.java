@@ -3,7 +3,7 @@ package br.com.voamais.Models;
 import java.util.UUID;
 
 public class Cliente {
-    private String nome;
+    private String nomeCliente;
     private String cpf;
     private boolean vip;
     private int qtdPessoasMaiorIdade;
@@ -11,12 +11,16 @@ public class Cliente {
     private final String id = UUID.randomUUID().toString();
 
 
+
     public Cliente(String nome, String cpf, boolean vip, int qtdPessoasMaiorIdade, int getQtdPessoasMenorIdade) {
-        this.nome = nome;
+        this.nomeCliente = nome;
         this.cpf = cpf;
         this.vip = vip;
         this.qtdPessoasMaiorIdade = qtdPessoasMaiorIdade;
         this.qtdPessoasMenorIdade = getQtdPessoasMenorIdade;
+    }
+
+    public Cliente(String nomeCliente, String number, boolean vip) {
     }
 
     public String getCpf() {
@@ -36,11 +40,11 @@ public class Cliente {
 
 
     public String getNome() {
-        return nome;
+        return nomeCliente;
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        this.nomeCliente = nome;
     }
 
     public boolean isVip() {
@@ -67,7 +71,7 @@ public class Cliente {
         this.qtdPessoasMenorIdade = qtdPessoasMenorIdade;
     }
     public String exibirResumoCliente() {
-        return "Cliente: " + nome + " | CPF: " + cpf + " | VIP: " + (vip ? "Sim" : "Não") +
+        return "Cliente: " + nomeCliente + " | CPF: " + cpf + " | VIP: " + (vip ? "Sim" : "Não") +
                 " | Adultos: " + qtdPessoasMaiorIdade + " | Crianças: " + qtdPessoasMenorIdade;
     }
 
