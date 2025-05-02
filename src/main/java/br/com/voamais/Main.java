@@ -7,14 +7,15 @@ import java.time.LocalTime;
 
 public class Main {
     public static void main(String[] args) {
-        // Criar destino
+
         Destino destino = new Destino(
                 "Fernando de Noronha",
                 "Brasil",
                 "Pernambuco",
-                "Fernando de Noronha",
-                "Arquipélago paradisíaco com praias e trilhas incríveis.",
-                500.0
+                true,
+                true,
+                true,
+                600
         );
 
 
