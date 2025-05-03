@@ -46,7 +46,7 @@ public class Destino {
         this.taxaTurismo = taxaTurismo;
     }
     public String exibirResumoDestino() {
-        return "Destino: " + nome + ", " + pais + " | " + descricao +
+        return "Destino| " + nome + ", " + pais + " | " + descricao +
                 " | Taxa turismo: R$" + taxaTurismo;
     }
 }

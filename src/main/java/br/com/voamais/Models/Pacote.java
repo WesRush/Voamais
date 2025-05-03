@@ -14,6 +14,7 @@ public class Pacote {
     private Translado translado;
     private LocalDate dataInicio;
     private  LocalDate dataFim;
+    private double calculoDesconto;
 
 
     public Pacote(Destino destino, Cliente cliente, double precoFinal, Hospedagem hospedagem, PassagemAerea passagem, AluguelCarro aluguelCarro, Translado translado, LocalDate dataInicio, LocalDate dataFim) {
@@ -27,6 +28,14 @@ public class Pacote {
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
         this.precoFinal = calcularPrecoTotal();
+    }
+
+    public double getCalculoDesconto() {
+        return calculoDesconto;
+    }
+
+    public void setCalculoDesconto(double calculoDesconto) {
+        this.calculoDesconto = calculoDesconto;
     }
 
     public Destino getDestino() {
@@ -105,7 +114,6 @@ public class Pacote {
         total+= destino.getTaxaTurismo();
         if (hospedagem != null) {
             total += hospedagem.calcularPreco();
-
         }
         if (passagem != null) {
             total += passagem.calcularPreco();
@@ -116,9 +124,21 @@ public class Pacote {
         if (translado != null) {
             total += translado.calcularPreco();
         }
+        if (cliente.isVip() == true) {
+            calculoDesconto = total *0.02;
+            return total = (total) - (calculoDesconto);
+
+        }
         return total;
     }
 
-}
+    public String exibirPrecoFinal() {
+        return String.format("Descontos Totais: R$ %.2f%nPreço final: R$ %.2f",
+                calculoDesconto, calcularPrecoTotal());
+    }
+
+    }
+
+
 
 
