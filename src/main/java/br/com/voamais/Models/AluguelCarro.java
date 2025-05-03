@@ -72,5 +72,8 @@ public class AluguelCarro extends Servico{
         long dias = java.time.temporal.ChronoUnit.DAYS.between(dataInicio, dataFim);
         return preco * dias;
     }
-
+    public String exibirResumoAluguelCarro() {
+        return "Aluguel de veículo | Modelo do carro: "+ modeloCarro+
+                "| Marca: "+ marcaCarro +" | Ano: "+ anoCarro +" | Placa: "+ placaCarro+"| Data da reserva - "+dataInicio+" // "+dataFim+" | Valor: "+calcularPreco() ;
+    }
 }

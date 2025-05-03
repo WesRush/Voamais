@@ -27,4 +27,5 @@ public abstract class Servico {
     public double calcularPreco(){
         return preco;
     }
+
 }
